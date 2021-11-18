@@ -36,3 +36,6 @@ python3 scripts/analyze_data.py --benchname=SRAD --action=speedups --blocksize=3
 python3 scripts/analyze_data.py --benchname=DCT --action=speedups --blocksize=4 --benchhome=${BENCH_HOME}
 python3 scripts/analyze_data.py --benchname=DCT --action=speedups --blocksize=8 --benchhome=${BENCH_HOME}
 python3 scripts/analyze_data.py --benchname=DCT --action=speedups --blocksize=16 --benchhome=${BENCH_HOME}
+
+python3 plots/plot_speedup.py speedups.csv speedups
+python3 plots/plot_speedup.py raw_numbers/lreal.csv speedups_paper
