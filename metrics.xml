@@ -1,0 +1,14 @@
+# Filter by dispatches range, GPU index and kernel names
+<metric
+  # range format "3:9"
+  range=""
+  # list of gpu indexes "0,1,2,3"
+  gpu_index=""
+  # list of matched sub-strings "Simple1,Conv1,SimpleConvolution"
+  kernel=""
+></metric>
+
+# List of metrics
+<metric
+    name=SQ_INSTS_VMEM_WR,SQ_INSTS_VMEM_RD,SQ_INSTS_LDS,VALUUtilization
+></metric>
