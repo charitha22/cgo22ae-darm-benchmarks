@@ -4,7 +4,8 @@
 Connect to the remote machine using provide IP address, username and password. Download and build the source code using following set of commands.
 ```
 $ export HOME=$(pwd)
-$ git clone https://github.com/charitha22/cgo22ae−darm−code.git $ cd cgo22ae-darm-code && mkdir build build_install
+$ git clone https://github.com/charitha22/cgo22ae−darm−code.git 
+$ cd cgo22ae-darm-code && mkdir build build_install
 $ export DARM_HOME=$(pwd)/build
 $ . scripts/run_cmake.sh && make -j4
 ```
