@@ -61,7 +61,7 @@ $ . ./tmp/compile_command.sh
 ```
 These commands automatically generate and runs a sequence of compilation commands that is instrumented with our transformation pass. To demonstrate above compilation process we provide a synthetic `HIP` kernel (`gpu_example.cpp`). To compile and run this kernel use the following command.
 ```
-$ cd {BENCH_HOME}/customization/gpu_example 
+$ cd ${BENCH_HOME}/customization/gpu_example 
 $ make && ./gpu_example
 ```
 This kernel contains a divergent if-then-else branch inside a two-nested loop. If and then sections of the branch contain if-then regions with random computations. This control-flow structure provides multiple melding opportunities for our method. You can visualize how DARM changed the control-flow of the program using the following commands.
