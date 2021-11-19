@@ -156,7 +156,7 @@ cd SRAD
 make clean
 
 # compile
-BLOCK_SIZE=${best_block_size_SRAD} PROFITABILITY_THRESHOLD=0.2 make srad_${best_block_size_LUD}.hip
+BLOCK_SIZE=${best_block_size_SRAD} PROFITABILITY_THRESHOLD=0.2 make srad_${best_block_size_SRAD}.hip
 
 # run
 echo "baseline : " | tee -a profit_results_${best_block_size_SRAD}.txt
