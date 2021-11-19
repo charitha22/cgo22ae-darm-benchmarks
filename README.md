@@ -66,9 +66,9 @@ $ make && ./gpu_example
 ```
 This kernel contains a divergent if-then-else branch inside a two-nested loop. If and then sections of the branch contain if-then regions with random computations. This control-flow structure provides multiple melding opportunities for our method. You can visualize how DARM changed the control-flow of the program using the following commands.
 ```
-$ ${DARM_HOME}/bin/opt −dot−cfg < ./tmp/gpu_example*.ll > /dev/null
+$ ${DARM_HOME}/bin/opt -dot-cfg < ./tmp/gpu_example*.ll > /dev/null
 $ mv .*foo*.dot before.dot
-$ ${DARM_HOME}/bin/opt −dot−cfg < ./tmp/after_pass.ll > /dev/null
+$ ${DARM_HOME}/bin/opt -dot-cfg < ./tmp/after_pass.ll > /dev/null
 $ mv .*foo*.dot after.dot
 ```
 These commands generate `.dot` files `before.dot` and `after.dot` that contains the control-flow graphs of the program before and after the DARM transformation. You can view the `.dot` files using any [online graph viewer](https://dreampuf.github.io/GraphvizOnline/).
