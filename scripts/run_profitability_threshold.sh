@@ -4,9 +4,9 @@ best_block_size_BIT=64
 best_block_size_PCM=32
 best_block_size_DCT=16
 best_block_size_MS=32
-best_block_size_LUD=16
+best_block_size_LUD=8
 best_block_size_SRAD=16
-best_block_size_NQU=96
+best_block_size_NQU=64
 
 
 # prgram arguments 
