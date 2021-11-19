@@ -16,7 +16,7 @@ This compilation process will take approximately 1 hour. Make sure you use the s
 Download the benchmarks and evaluation scripts using,
 ```
 $ cd ${HOME} && git clone https://github.com/charitha22/cgo22ae-darm-benchmarks.git
-$ cd cgo22ae-darm−benchmarks && export BENCH_HOME=$(pwd)
+$ cd cgo22ae-darm-benchmarks && export BENCH_HOME=$(pwd)
 ```
 
 To generate the speedups plot (Figure 7) run following commands,
