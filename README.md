@@ -1,6 +1,6 @@
-### CGO-2022 artifact evaluation instructions for the paper DARM: Control-Flow Melding for SIMT Thread Divergence Reduction
+# CGO-2022 artifact evaluation instructions for the paper DARM: Control-Flow Melding for SIMT Thread Divergence Reduction
 
-### Installation
+## Installation
 Connect to the remote machine using provide IP address, username and password. Download and build the source code using following set of commands.
 ```
 $ export HOME=$(pwd)
@@ -10,7 +10,7 @@ $ . scripts/run_cmake.sh && make -j4
 ```
 This compilation process will take approximately 1 hour. Make sure you use the same shell terminal to execute all the commands/scripts to preserve environment variables. Continue to use the same terminal when running evaluation scripts in the next section.
 
-### Evaluation and expected result
+## Evaluation and expected result
 
 Download the benchmarks and evaluation scripts using,
 ```
@@ -23,7 +23,7 @@ To generate the speedups plot (Figure 7) run following commands,
 $ . scripts/run_speedups.sh
 $ . scripts/gen_speedups_plot.sh
 ```
-Note that speedups.pdf is generated based on the current experiment results and speedups paper.pdf is generated from the raw numbers used for our paper.
+Note that `speedups.pdf` is generated based on the current experiment results and speedups `paper.pdf` is generated from the raw numbers used for our paper.
 
 To generate the ALU utilization plot (Figure 8) and memory instruction counters plot (Figure 9) use the following commands,
 ```
@@ -32,7 +32,7 @@ $ . scripts/gen_alu_mem_plot.sh
 ```
 `alu.pdf` and `mem.pdf` are generated based on current experiment results and `alu_paper.pdf` and `mem_paper.pdf` are generated using raw numbers used in the paper.
 
-Following commands can be used to generate the melding prof- itability threshold plot (Figure 10).
+Following commands can be used to generate the melding profitability threshold plot (Figure 10).
 ```
 $ . scripts/run_profitability_threshold.sh 
 $ . scripts/gen_profit_plot.sh
@@ -50,9 +50,9 @@ You can use scp from your local machine to download the PDF files to your local 
 ```
 $ scp <username>@tgrogers−pc05.ecn.purdue.edu:< location of pdf file> .
 ```
-### Experiment customization and reusability
-## Using our method on a new GPU kernel
-Our compiler can be used on any GPU kernel written in HIP language. The following commands can be used to compile a GPU kernel with our transformation enabled.
+## Experiment customization and reusability
+### Using our method on a new GPU kernel
+Our compiler can be used on any GPU kernel written in `HIP` language. The following commands can be used to compile a GPU kernel with our transformation enabled.
 ```
 $ mkdir −p tmp
 $ hipcc −### −O3 <kernel name>.cpp −o <executable name> 2>&1 | python3 ${DARM HOME}/../scripts/gen_compile_command.py −−llvm−home=${DARM_HOME} --cfmelder−options="" −−output−loc=./tmp > ./tmp/compile command.sh 
@@ -85,7 +85,7 @@ $ . ./tmp/compile_command.sh
 ```
 You can also update the `–cfmelder-options` field in the provided Makefile to achieve the same.
 
-## Using our method on a CPU program
+### Using our method on a CPU program
 
 DARM is implemented a general compiler transformation pass and integrated with `LLVM opt`. Therefore it can be used on CPU programs as well. To demonstrate this we provide a synthetic program written in `C`. Run compile this program run,
 ```
