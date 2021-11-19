@@ -1,6 +1,6 @@
-*** CGO-2022 artifact evaluation instructions for the paper DARM: Control-Flow Melding for SIMT Thread Divergence Reduction
+### CGO-2022 artifact evaluation instructions for the paper DARM: Control-Flow Melding for SIMT Thread Divergence Reduction
 
-*** Installation
+### Installation
 Connect to the remote machine using provide IP address, username and password. Download and build the source code using following set of commands.
 ```
 $ export HOME=$(pwd)
@@ -10,7 +10,7 @@ $ . scripts/run cmake.sh && make -j4
 ```
 This compilation process will take approximately 1 hour. Make sure you use the same shell terminal to execute all the commands/scripts to preserve environment variables. Continue to use the same terminal when running evaluation scripts in the next section.
 
-*** Evaluation and expected result
+### Evaluation and expected result
 
 Download the benchmarks and evaluation scripts using,
 ```
@@ -50,8 +50,8 @@ You can use scp from your local machine to download the PDF files to your local 
 ```
 $ scp <username>@tgrogers−pc05.ecn.purdue.edu:< location of pdf file> .
 ```
-*** Experiment customization and reusability
-** Using our method on a new GPU kernel
+### Experiment customization and reusability
+## Using our method on a new GPU kernel
 Our compiler can be used on any GPU kernel written in HIP language. The following commands can be used to compile a GPU kernel with our transformation enabled.
 ```
 $ mkdir −p tmp
@@ -85,7 +85,7 @@ $ . ./tmp/compile_command.sh
 ```
 You can also update the `–cfmelder-options` field in the provided Makefile to achieve the same.
 
-** Using our method on a CPU program
+## Using our method on a CPU program
 
 DARM is implemented a general compiler transformation pass and integrated with `LLVM opt`. Therefore it can be used on CPU programs as well. To demonstrate this we provide a synthetic program written in `C`. Run compile this program run,
 ```
