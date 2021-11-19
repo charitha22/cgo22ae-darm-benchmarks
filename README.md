@@ -4,9 +4,9 @@
 Connect to the remote machine using provide IP address, username and password. Download and build the source code using following set of commands.
 ```
 $ export HOME=$(pwd)
-$ git clone https://github.com/charitha22/cgo22ae−darm−code.git $ cd cgo22ae-darm-code && mkdir build build install
-$ export DARM HOME=$(pwd)/build
-$ . scripts/run cmake.sh && make -j4
+$ git clone https://github.com/charitha22/cgo22ae−darm−code.git $ cd cgo22ae-darm-code && mkdir build build_install
+$ export DARM_HOME=$(pwd)/build
+$ . scripts/run_cmake.sh && make -j4
 ```
 This compilation process will take approximately 1 hour. Make sure you use the same shell terminal to execute all the commands/scripts to preserve environment variables. Continue to use the same terminal when running evaluation scripts in the next section.
 
@@ -15,7 +15,7 @@ This compilation process will take approximately 1 hour. Make sure you use the s
 Download the benchmarks and evaluation scripts using,
 ```
 $ cd ${HOME} && git clone https://github.com/charitha22/cgo22ae−darm−benchmarks.git
-$ cd cgo22ae-darm−benchmarks && export DARM HOME=$(pwd)
+$ cd cgo22ae-darm−benchmarks && export BENCH_HOME=$(pwd)
 ```
 
 To generate the speedups plot (Figure 7) run following commands,
