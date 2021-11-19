@@ -1,4 +1,4 @@
-nruns=3
+nruns=5
 # best block sizes for DARM
 best_block_size_BIT=64
 best_block_size_PCM=32

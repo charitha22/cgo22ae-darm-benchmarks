@@ -1,7 +1,7 @@
 #!/bin/bash
 
 profitabilty_threshold=0.2
-nruns=3
+nruns=5
 
 # program args 
 LUD_ARGS="-s 16384"

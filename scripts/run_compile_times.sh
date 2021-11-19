@@ -6,7 +6,7 @@ run() {
 }
 
 # number of runs
-nruns=3
+nruns=5
 
 # best block sizes for DARM
 blocksize_BIT=64
