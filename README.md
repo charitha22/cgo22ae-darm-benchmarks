@@ -80,8 +80,8 @@ Our compiler provides several options that can be used to customize the experime
 * `–run-cfmelding-once` : Disables applying melding recursively. When this option is enabled transformation terminates after performing only one melding.
 You modify the `–cfmelder-options` field in the compilation compilation command above to use any of these options. For example, following modified command will on meld control-flow subgrpahs only if they are maximally profitable (i.e. threshold is 0.5).
 ```
-$ mkdir −p tmp
-$ hipcc −### −O3 <kernel_name>.cpp −o <executable_name> 2>&1 | python3 ${DARM_HOME}/../scripts/gen_compile_command.py −−llvm−home=#{DARM_HOME} −−cfmelder−options=”−−cf−merging−similarity−threshold=0.5” −−output−loc=./tmp > ./tmp/compile_command.sh 
+$ mkdir -p tmp
+$ hipcc -### -O3 <kernel_name>.cpp -o <executable_name> 2>&1 | python3 ${DARM_HOME}/../scripts/gen_compile_command.py --llvm-home=#{DARM_HOME} --cfmelder-options=”--cf-merging-similarity-threshold=0.5” --output-loc=./tmp > ./tmp/compile_command.sh 
 $ . ./tmp/compile_command.sh
 ```
 You can also update the `–cfmelder-options` field in the provided Makefile to achieve the same.
@@ -90,7 +90,7 @@ You can also update the `–cfmelder-options` field in the provided Makefile to 
 
 DARM is implemented a general compiler transformation pass and integrated with `LLVM opt`. Therefore it can be used on CPU programs as well. To demonstrate this we provide a synthetic program written in `C`. Run compile this program run,
 ```
-$ cd ${BENCH HOME}/customization/cpu_example 
+$ cd ${BENCH_HOME}/customization/cpu_example 
 $ make
 ```
 This will generate LLVM-IR files `cpu_example.input.ll` and `cpu_example.output.ll` that contains the program before and after applying DARM transformation. To visualize the control-flow graphs of the two programs run,
