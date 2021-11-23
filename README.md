@@ -3,7 +3,7 @@
 ## Installation
 Connect to the remote machine using provide IP address, username and password. Download and build the source code using following set of commands.
 ```
-$ export HOME=$(pwd)
+$ export AE_HOME=$(pwd)
 $ git clone https://github.com/charitha22/cgo22ae-darm-code.git 
 $ cd cgo22ae-darm-code && mkdir build build_install
 $ export DARM_HOME=$(pwd)/build
@@ -15,7 +15,7 @@ This compilation process will take approximately 1 hour. Make sure you use the s
 
 Download the benchmarks and evaluation scripts using,
 ```
-$ cd ${HOME} && git clone https://github.com/charitha22/cgo22ae-darm-benchmarks.git
+$ cd ${AE_HOME} && git clone https://github.com/charitha22/cgo22ae-darm-benchmarks.git
 $ cd cgo22ae-darm-benchmarks && export BENCH_HOME=$(pwd)
 ```
 
@@ -56,7 +56,7 @@ $ scp <username>@tgrogers−pc05.ecn.purdue.edu:<location_of_pdf_file> .
 Our compiler can be used on any GPU kernel written in `HIP` language. The following commands can be used to compile a GPU kernel with our transformation enabled.
 ```
 $ mkdir −p tmp
-$ hipcc −### −O3 <kernel_name>.cpp −o <executable_name> 2>&1 | python3 ${DARM HOME}/../scripts/gen_compile_command.py −−llvm−home=${DARM_HOME} --cfmelder−options="" −−output−loc=./tmp > ./tmp/compile_command.sh 
+$ hipcc −### −O3 <kernel_name>.cpp −o <executable_name> 2>&1 | python3 ${DARM_HOME}/../scripts/gen_compile_command.py −−llvm−home=${DARM_HOME} --cfmelder−options="" −−output−loc=./tmp > ./tmp/compile_command.sh 
 $ . ./tmp/compile_command.sh
 ```
 These commands automatically generate and runs a sequence of compilation commands that is instrumented with our transformation pass. To demonstrate above compilation process we provide a synthetic `HIP` kernel (`gpu_example.cpp`). To compile and run this kernel use the following command.
