@@ -1,4 +1,30 @@
-# CGO-2022 artifact evaluation instructions for the paper DARM: Control-Flow Melding for SIMT Thread Divergence Reduction
+# CGO-2022 Artifact Evaluation Instructions for the Paper *DARM: Control-Flow Melding for SIMT Thread Divergence Reduction*
+
+This artifact provides the instructions and source code to reproduce the experiments presented in our paper on reducing SIMT thread divergence by control-flow melding. Our approach is implemented on top of ROCM-4.0.0 GPU compiler (LLVM 12.0.0). We also provide a benchmark suite to evaluate the effectiveness of our technique. This benchmark suite consists of well-known open-source GPGPU applications and optimized reference implementations of certain GPGPU applications.
+
+Cite our [paper](https://arxiv.org/abs/2107.05681),
+```
+@misc{saumya2022darm,
+      title={DARM: Control-Flow Melding for SIMT Thread Divergence Reduction -- Extended Version}, 
+      author={Charitha Saumya and Kirshanthan Sundararajah and Milind Kulkarni},
+      year={2022},
+      eprint={2107.05681},
+      archivePrefix={arXiv},
+      primaryClass={cs.PL}
+}
+```
+
+## Hardware Dependancies
+* ROCm-compatible GPU (We have tested our compiler on AMD Radeon RX Vega 64 and Radeon Pro VII GPUs)
+* ROCm-compatible CPU (e.g. AMD Ryzen 5 2400G)
+To learn more about ROCm compatible GPUs and CPUs check here : https://github.com/RadeonOpenCompute/ROCm#hardware-and-software-support
+
+## Software Dependancies
+* ROCm-4.0.0 (follow installation instructions at https://rocmdocs.amd.com/en/latest/Installation_Guide/Installation-Guide.html#installing-a-rocm-package-from-a-debian-repository)
+* modern C/C++ compiler (We used gcc-7.5.0 to compile the source code)
+* Python 3.6.9 with matplotlib, numpy, pandas, scipy packages installed
+* Unix-like OS (We have tested our code on 18.04.5 LTS)
+* cmake (we used cmake-3.21.4)
 
 ## Installation
 Connect to the remote machine using provide IP address, username and password. Download and build the source code using following set of commands.
@@ -11,7 +37,7 @@ $ . scripts/run_cmake.sh && make -j4
 ```
 This compilation process will take approximately 1 hour. Make sure you use the same shell terminal to execute all the commands/scripts to preserve environment variables. Continue to use the same terminal when running evaluation scripts in the next section.
 
-## Evaluation and expected result
+## Evaluation and Expected Result
 
 Download the benchmarks and evaluation scripts using,
 ```
@@ -51,8 +77,8 @@ You can use scp from your local machine to download the PDF files to your local 
 ```
 $ scp <username>@tgrogers−pc05.ecn.purdue.edu:<location_of_pdf_file> .
 ```
-## Experiment customization and reusability
-### Using our method on a new GPU kernel
+## Experiment Customization and Reusability
+### Using DARM  on a new GPU kernel
 Our compiler can be used on any GPU kernel written in `HIP` language. The following commands can be used to compile a GPU kernel with our transformation enabled.
 ```
 $ mkdir −p tmp
@@ -86,7 +112,7 @@ $ . ./tmp/compile_command.sh
 ```
 You can also update the `–cfmelder-options` field in the provided Makefile to achieve the same.
 
-### Using our method on a CPU program
+### Using DARM on a CPU program
 
 DARM is implemented a general compiler transformation pass and integrated with `LLVM opt`. Therefore it can be used on CPU programs as well. To demonstrate this we provide a synthetic program written in `C`. Run compile this program run,
 ```
