@@ -27,7 +27,7 @@ To learn more about ROCm compatible GPUs and CPUs check here : https://github.co
 * cmake (we used cmake-3.21.4)
 
 ## Installation
-Connect to the remote machine using provide IP address, username and password. Download and build the source code using following set of commands.
+Download and build the source code using following set of commands.
 ```
 $ export AE_HOME=$(pwd)
 $ git clone https://github.com/charitha22/cgo22ae-darm-code.git 
