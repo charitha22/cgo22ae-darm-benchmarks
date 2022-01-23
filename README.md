@@ -27,8 +27,9 @@ To learn more about ROCm compatible GPUs and CPUs check here : https://github.co
 * cmake (we used cmake-3.21.4)
 
 ## Installation
-Download and build the source code using following set of commands.
+Download and build the source code using following set of commands. 
 ```
+$ mkdir darm_ae && cd darm_ae
 $ export AE_HOME=$(pwd)
 $ git clone https://github.com/charitha22/cgo22ae-darm-code.git 
 $ cd cgo22ae-darm-code && mkdir build build_install
