@@ -76,7 +76,7 @@ $ . scripts/print_compile_times.sh
 This will print out the compile times for DARM and baseline into the standard output.
 You can use scp from your local machine to download the PDF files to your local machine.
 ```
-$ scp <username>@tgrogers−pc05.ecn.purdue.edu:<location_of_pdf_file> .
+$ scp <username>@<ip_address>:<location_of_pdf_file> .
 ```
 ## Experiment Customization and Reusability
 ### Using DARM  on a new GPU kernel
